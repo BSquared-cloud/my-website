@@ -1,0 +1,19 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Node / Python envs (in case you use them later)
+node_modules/
+venv/
+
+# Logs and temporary files
+*.log
+
+# Environment variables and keys
+.env
+*.key
+*.pem
+
+# VSCode or other editor configs
+.vscode/
+.idea/

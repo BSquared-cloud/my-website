@@ -9,73 +9,85 @@
 <body>
   <header>
     <nav>
-      <div class="logo">YourName</div>
+      <div class="logo">Brandon Bowers</div>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <div class="toggle-container">
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+      </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm Brandon</h1>
-      <p>A passionate hobbyist, building cool stuff in my free time.</p>
-      <img src="images/profile.jpg" alt="Profile Picture" />
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Hello, I'm Brandon</h1>
+        <p>A passionate hobbyist, building cool stuff in my free time.</p>
+        <img src="images/profile.jpg" alt="Profile Picture" />
+      </div>
+    </section>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="images/profile.jpg" alt="Profile Picture" class="about-image" />
-      <p>
-        I'm a curious hobbyist who loves learning new technologies and creating
-        projects that solve real-world problems. Right now I'm experimenting with AI tools and breaking code.
-      </p>
-    </div>
-  </section>
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="images/profile.jpg" alt="Headshot of Brandon Bowers" class="about-image" />
+        <p>
+          I’m a curious hobbyist who loves learning new technologies and creating projects that solve real‑world problems.
+          Right now I’m experimenting with AI tools and breaking code.
+        </p>
+      </div>
+    </section>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <p class="coming-soon">Coming Soon...</p>
-    <div class="project">
-      <h3>Website</h3>
-      <p>This is the current website you're viewing — built entirely by my local AI agent.</p>
-    </div>
-    <div class="project">
-      <h3>Future Project 1</h3>
-      <p>A placeholder for a future project that will be developed later.</p>
-    </div>
-    <div class="project">
-      <h3>Future Project 2</h3>
-      <p>Another placeholder for a future project that will be developed later.</p>
-    </div>
-  </section>
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <p class="coming-soon">Coming Soon...</p>
+      <div class="project">
+        <h3>Website</h3>
+        <p>This is the current website you're viewing — built entirely by my local AI agent.</p>
+      </div>
+      <div class="project">
+        <h3>Future Project 1</h3>
+        <p>A placeholder for a future project that will be developed later.</p>
+      </div>
+      <div class="project">
+        <h3>Future Project 2</h3>
+        <p>Another placeholder for a future project that will be developed later.</p>
+      </div>
+    </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/profile" target="_blank">linkedin.com/in/profile</a></p>
-    </div>
-    <form>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+        <p>LinkedIn:
+          <a href="https://linkedin.com/in/profile" target="_blank" rel="noopener">
+            linkedin.com/in/profile
+          </a>
+        </p>
+      </div>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Brandon Bowers. All rights reserved.</p>
+    <p>&copy; 2025 Brandon Bowers. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
