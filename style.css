@@ -94,7 +94,7 @@ form button:hover {
 .hero {
   background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('images/profile.jpg') center/cover no-repeat;
+    url('images/headshot.png') center/cover no-repeat;
   color: #fff;
   height: 90vh;
   display: flex; align-items: center; justify-content: center;
