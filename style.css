@@ -22,11 +22,17 @@ body.dark-mode {
 }
 
 /* Header & Footer */
-header, footer {
-  background: #2c3e50;          /* darker charcoal */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background-color: rgba(44, 62, 80, 0.8);
   color: #fff;
 }
 footer {
+  background: #2c3e50;
+  color: #fff;
   text-align: center;
   padding: 1rem;
 }
@@ -34,7 +40,7 @@ footer {
 /* NAV Container */
 nav {
   display: flex;
-  justify-content: center;     /* center the links */
+  justify-content: center;
   align-items: center;
   position: relative;
   padding: 1rem 2rem;
@@ -93,13 +99,25 @@ form button:hover {
 /* Hero */
 .hero {
   background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('images/headshot.png') center/cover no-repeat;
+    linear-gradient(135deg, #1e3c72 0%, #2a5298 100%),
+    url('images/abstract-background.png') center/cover no-repeat;
+  background-blend-mode: overlay;
   color: #fff;
   height: 90vh;
-  display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  animation: backgroundShift 20s ease infinite;
 }
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hero-content { max-width: 600px; }
 .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 .hero img {
@@ -110,24 +128,78 @@ form button:hover {
 
 /* Sections */
 section {
-  padding: 2rem 1rem;
+  padding: 10rem 2rem 8rem;
+  width: 100%;
 }
-main .about, .projects, .contact {
-  max-width: 800px;
-  margin: auto;
+section h2 {
+  text-align: center;
+  position: relative;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #2a5298;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
-/* About */
+/* Alternating background visual enhancement */
+.about {
+  background: linear-gradient(to right, #f9f9f9 0%, #f0f0f0 100%);
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.projects {
+  background: linear-gradient(to right, #ffffff 0%, #f9f9f9 100%);
+  border-bottom: 1px solid #e0e0e0;
+}
+.contact {
+  background: linear-gradient(to right, #f0f0f0 0%, #ffffff 100%);
+  border-top: 1px solid #e0e0e0;
+}
+
+main .about, main .projects, main .contact {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* About content */
 .about-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-content p {
+  max-width: 500px;
 }
 .about-image {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 12px;
+}
+@media (min-width: 769px) {
+  .about-content {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+  }
 }
 
 /* Projects */
@@ -136,15 +208,24 @@ main .about, .projects, .contact {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
+  margin: 1rem auto;
+  max-width: 1000px;
 }
 .projects .coming-soon {
   color: #666;
   font-style: italic;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
+  max-width: 1000px;
+  padding: 0 2rem;
 }
 
 /* Contact */
+.contact-info,
+.contact form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
 .contact-info { margin-bottom: 1.5rem; }
 .contact form {
   display: flex;
