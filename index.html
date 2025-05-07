@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brandon Bowers</title>
   <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
+/>
 </head>
 <body>
   <header>
@@ -19,7 +23,6 @@
 
       <div class="toggle-container">
         <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
       </div>
     </nav>
   </header>
@@ -27,8 +30,8 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <h1>Hello, I'm Brandon</h1>
-        <p>A passionate hobbyist, trying to build cool and useful stuff in my free time.</p>
+        <h1>Hi, I'm Brandon</h1>
+        <p>Just a passionate hobbyist, trying to build cool stuff in my free time.</p>
         <img src="images/headshot.jpg" alt="Profile Picture" />
       </div>
     </section>
@@ -39,7 +42,7 @@
         <img src="images/profile_picture.JPG" alt="Headshot of Brandon Bowers" class="about-image" />
         <p>
           I’m a curious mind from Boston, MA who loves learning and creating projects that solve real‑world problems.
-          Right now I work for a small PropTech company in Boston that's a marketplace and procurement tool for the 
+          Right now I work for a small PropTech company in Boston. We are a marketplace and procurement tool for the 
           commercial services industry. In my free time, I’m experimenting with AI tools and trying to break 90 on the golf course.
         </p>
       </div>
@@ -64,26 +67,34 @@
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:bowers1021@gmail.com">bowers1021@gmail.com</a></p>
-        <p>LinkedIn:
-          <a href="https://linkedin.com/in/brandon-bowers-1021" target="_blank" rel="noopener">
-            linkedin.com/in/brandon-bowers-1021
-          </a>
-        </p>
-      <div class="form-wrapper">
-      <!-- JotForm Embed -->
-        <iframe
-          id="jotform-iframe"
-          title="Contact Form"
-          src="https://form.jotform.com/251258953086061"
-          frameborder="0"
-          style="width: 100%; height: 775px; border: none;"
-          scrolling="no"
-          allowtransparency="true"
-       ></iframe>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:bowers1021@gmail.com">bowers1021@gmail.com</a>
+          </p>
+          <p>
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/brandon-bowers-1021" target="_blank" rel="noopener">
+              linkedin.com/in/brandon-bowers-1021
+            </a>
+          </p>
+        </div>
+    
+        <div class="form-wrapper">
+          <!-- JotForm Embed -->
+          <iframe
+            id="jotform-iframe"
+            title="Contact Form"
+            src="https://form.jotform.com/251258953086061"
+            frameborder="0"
+            style="width: 100%; height: 775px; border: none;"
+            scrolling="no"
+            allowtransparency="true"
+          ></iframe>
+        </div>
       </div>
-    </section>
+    </section>    
   </main>
 
   <footer>

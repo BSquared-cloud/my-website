@@ -15,23 +15,15 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background: #121212;
-  color: #e0e0e0;
-}
-body.dark-mode .projects .project {
-  background: #1e1e1e;
-  color: #e0e0e0;
-}
-
 /* Header & Footer */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  background-color: rgba(44, 62, 80, 0.8);
+  backdrop-filter: blur(5px);
+  background: transparent;
   color: #fff;
 }
 footer {
@@ -51,7 +43,6 @@ nav {
   gap: 1rem;
 }
 
-/* Logo on left */
 .logo {
   position: absolute;
   left: 2rem;
@@ -59,7 +50,6 @@ nav {
   font-weight: bold;
 }
 
-/* Main nav links */
 .nav-links {
   display: none;
   list-style: none;
@@ -72,7 +62,6 @@ nav {
   font-weight: bold;
 }
 
-/* Toggle icons container */
 .toggle-container {
   position: absolute;
   right: 2rem;
@@ -80,7 +69,6 @@ nav {
   gap: 0.5rem;
 }
 
-/* Buttons */
 #menu-toggle,
 #theme-toggle {
   background: none;
@@ -91,7 +79,6 @@ nav {
 }
 #theme-toggle { font-size: 1.2rem; }
 
-/* Hover states */
 #menu-toggle:hover,
 #theme-toggle:hover,
 .nav-links a:hover,
@@ -100,12 +87,12 @@ form button:hover {
   transition: background 0.3s;
 }
 
-/* Hero */
 .hero {
   background:
     linear-gradient(135deg, #1e3c72 0%, #2a5298 100%),
     url('images/abstract-background.png') center/cover no-repeat;
   background-blend-mode: overlay;
+  animation: backgroundShift 20s ease infinite;
   color: #fff;
   height: 100vh;
   display: flex;
@@ -113,8 +100,6 @@ form button:hover {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  animation: backgroundShift 20s ease infinite;
-  background-attachment: fixed;
 }
 
 @keyframes backgroundShift {
@@ -123,7 +108,7 @@ form button:hover {
   100% { background-position: 0% 50%; }
 }
 
-.hero-content { max-width: 600px; }
+.hero-content { max-width: 600px; padding-top: 80px; }
 .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 .hero img {
   border-radius: 50%;
@@ -131,7 +116,6 @@ form button:hover {
   margin-top: 1rem;
 }
 
-/* Sections */
 section {
   padding: 12rem 2rem 12rem !important;
   width: 100%;
@@ -153,7 +137,6 @@ section h2::after {
   border-radius: 2px;
 }
 
-/* Alternating background visual enhancement */
 .about,
 .projects,
 .contact {
@@ -169,7 +152,6 @@ main .about, main .projects, main .contact {
   box-shadow: none;
 }
 
-/* About content */
 .about-content {
   display: flex;
   flex-direction: column;
@@ -202,7 +184,6 @@ main .about, main .projects, main .contact {
   }
 }
 
-/* Projects */
 .projects .project {
   background: #fff;
   padding: 1rem;
@@ -219,46 +200,50 @@ main .about, main .projects, main .contact {
   padding: 0 2rem;
 }
 
-/* Contact */
-.contact-info,
-.contact form {
+.contact-container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-.contact-info {
-  margin-bottom: 1.5rem;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 1rem;
-  border-radius: 8px;
-}
-.contact form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 1.5rem 2rem 2rem;
-  border-radius: 8px;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
 }
-form input,
-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info p {
   font-size: 1rem;
+  color: #2c3e50;
 }
-form button {
-  padding: 0.5rem 1rem;
-  background: #2c3e50;
-  color: #fff;
+
+.contact-info i {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: #2a5298;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-wrapper iframe {
+  max-width: 750px;
+  width: 100%;
+  height: 750px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 /* MEDIA QUERIES */
-
-/* Desktop nav always visible */
 @media (min-width: 769px) {
   .nav-links {
     display: flex !important;
@@ -269,13 +254,19 @@ form button {
   #menu-toggle { display: none; }
 }
 
-/* Mobile layout */
 @media (max-width: 768px) {
   .nav-links.show-menu {
     display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: #2c3e50;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 1rem 0;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .nav-links li {
     display: block;
@@ -285,27 +276,6 @@ form button {
   .hero img { width: 120px; }
 }
 
-/* Jotform iframe */
-#jotform-iframe {
-  max-width: 100%;
-  width: 100%;
-  height: 800px;
-  border: none;
-}
-
-@media only screen and (max-width: 768px) {
-  #jotform-iframe {
-    height: 1000px;
-  }
-}
-
-.form-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.form-wrapper iframe {
-  max-width: 600px;
-  width: 100%;
+body, html {
+  overflow-x: hidden;
 }
