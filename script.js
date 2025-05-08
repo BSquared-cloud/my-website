@@ -13,3 +13,12 @@ window.addEventListener('resize', () => {
     navLinks.classList.remove('show-menu');
   }
 });
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks.classList.contains('show-menu')) {
+      navLinks.classList.remove('show-menu');
+    }
+  });
+});

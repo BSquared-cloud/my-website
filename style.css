@@ -22,7 +22,6 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  backdrop-filter: blur(5px);
   background: transparent;
   color: #fff;
 }
@@ -36,18 +35,22 @@ footer {
 /* NAV Container */
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   padding: 1rem 2rem;
   gap: 1rem;
 }
 
+.logo img {
+  height: 40px; /* adjust as needed */
+  display: block;
+}
+
 .logo {
-  position: absolute;
-  left: 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* This aligns content to the left */
 }
 
 .nav-links {
@@ -117,7 +120,7 @@ form button:hover {
 }
 
 section {
-  padding: 12rem 2rem 12rem !important;
+  padding: 8rem 2rem 8rem !important;
   width: 100%;
 }
 section h2 {
@@ -259,14 +262,12 @@ main .about, main .projects, main .contact {
     display: block;
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
-    background: #2c3e50;
-    padding: 1rem 0;
-    text-align: center;
+    background: #2c3e5000;
+    padding: 1rem 1.5rem;
+    text-align: right;
     border-radius: 0 0 8px 8px;
     z-index: 1001;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .nav-links li {
     display: block;
@@ -274,6 +275,11 @@ main .about, main .projects, main .contact {
   }
   .hero h1 { font-size: 2rem; }
   .hero img { width: 120px; }
+  header {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 
 body, html {
