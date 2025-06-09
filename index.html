@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brandon Bowers</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
@@ -29,7 +29,7 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -62,14 +62,15 @@
 
     <section id="projects" class="projects">
       <h2>Projects</h2>
-      <p class="coming-soon">More to come soon...</p>
+      <p class="coming-soon"><a href="projects.html">View all projects →</a></p>
       <div class="project">
         <h3>Website</h3>
         <p>This is the current website you're viewing — coded entirely by my local AI agent!</p>
       </div>
       <div class="project">
-        <h3>Future Project</h3>
-        <p>A future project.</p>
+        <h3>Paddle Ball Game</h3>
+        <p>A simple canvas-based paddle game written in JavaScript, by AI.</p>
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
       </div>
       <div class="project">
         <h3>Future Project</h3>
@@ -130,5 +131,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="paddle.js"></script>
 </body>
 </html>

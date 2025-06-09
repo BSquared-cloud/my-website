@@ -13,6 +13,7 @@ body {
   background: #f9f9f9;
   color: #333;
   transition: background 0.3s, color 0.3s;
+  background-image: url('/images/abstract-background.png');
 }
 
 /* Header & Footer */
@@ -93,7 +94,7 @@ form button:hover {
 .hero {
   background:
     linear-gradient(135deg, #1e3c72 0%, #2a5298 100%),
-    url('images/abstract-background.png') center/cover no-repeat;
+    url('/images/abstract-background.png') center/cover no-repeat;
   background-blend-mode: overlay;
   animation: backgroundShift 20s ease infinite;
   color: #fff;
@@ -143,7 +144,7 @@ section h2::after {
 .about,
 .projects,
 .contact {
-  background: url('images/abstract-background.png') center/cover no-repeat;
+  background: url('/images/abstract-background.png') center/cover no-repeat;
   background-attachment: fixed;
 }
 
@@ -200,7 +201,21 @@ main .about, main .projects, main .contact {
   font-style: italic;
   margin: 0 auto 1rem;
   max-width: 1000px;
-  padding: 0 2rem;
+}
+
+.projects .coming-soon a {
+  color: #ffffff;
+  font-style: italic;
+  margin: 0 auto 1rem;
+  max-width: 1000px;
+  padding-left: 2px;
+}
+
+#gameCanvas {
+  display: block;
+  margin: 2rem auto;
+  border: 2px solid white;
+  background: #111;
 }
 
 .contact-container {
