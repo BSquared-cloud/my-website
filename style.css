@@ -318,8 +318,6 @@ main .about, main .projects, main .contact {
   text-decoration: underline;
 }
 
-/* Ensure the h2 for the projects page itself is styled (it uses .content-container h2 style currently) */
-/* If .project-list is not inside a .content-container, you might need specific styles for its H2 */
 .project-list > h2 { /* Targeting the h2 that is a direct child of .project-list */
   text-align: center;
   color: #fff; /* White, as it's on the main page background */
@@ -371,27 +369,25 @@ main .about, main .projects, main .contact {
     width: 100%; /* Take full width of its parent (which is .content-container) */
     border: 2px solid #e0e0e0;
     margin: 1rem auto 2rem auto; /* Space around the embed frame */
-    background-color: #111; /* Default dark background for embeds */
+    background-color: #111;
     box-sizing: border-box;
     box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: auto;
-    /* Default height - can be overridden */
-    /* min-height: 400px; */ /* A sensible default minimum */
 }
 
 .project-detail-page-wrapper {
-  padding-top: 100px; /* Adjust this value based on your actual fixed header height + desired gap */
+  padding-top: 100px; /* Adjust this value based on actual fixed header height + desired gap */
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 4rem; /* Provides some space before the footer */
+  padding-bottom: 4rem;
 }
 
-/* Optional: A generic button style for links like "Back to Projects" */
+/* A generic button style for links like "Back to Projects" */
 .button-style-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #4d79c4; /* Your primary theme color */
+  background-color: #4d79c4;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
@@ -400,7 +396,7 @@ main .about, main .projects, main .contact {
 }
 
 .button-style-link:hover {
-  background-color: #1e3c72; /* A darker shade or complementary color */
+  background-color: #1e3c72;
   color: #fff;
 }
 

@@ -1,7 +1,7 @@
 .project-embed-frame.goals-app-embed-size {
     height: 900px; /* Specific height for goals app */
     max-width: 1600px; /* Specific max-width for goals app frame */
-    background-color: #121212; /* Goals app internal background, if different from default frame bg */
+    background-color: #121212;
 }
 
 body {
@@ -42,6 +42,7 @@ body {
     flex: 1; /* Takes up 1 part of the available space */
     background-color: #303030;
     padding: 20px;
+    min-width: 600px;
     border-radius: 8px;
     text-align: center;
 }
@@ -52,7 +53,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Placeholder for progress bar styling - we will change this for circular */
 .goals-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,8 +197,8 @@ h1 {
 
 .calendar-day-cell {
     text-align: center;
-    padding: 5px;
-    height: 50px;
+    padding: 4px;
+    height: auto;
     /* vertical-align: middle; /* If content within circle needs centering */
 }
 
