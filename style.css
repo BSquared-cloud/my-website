@@ -14,6 +14,10 @@ body {
   color: #333;
   transition: background 0.3s, color 0.3s;
   background-image: url('/images/abstract-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 /* Header & Footer */
@@ -196,14 +200,14 @@ main .about, main .projects, main .contact {
   margin: 1rem auto;
   max-width: 1000px;
 }
-.projects .coming-soon {
+.projects .view-projects {
   color: #ffffff;
   font-style: italic;
   margin: 0 auto 1rem;
   max-width: 1000px;
 }
 
-.projects .coming-soon a {
+.projects .view.projects a {
   color: #ffffff;
   font-style: italic;
   margin: 0 auto 1rem;
@@ -213,9 +217,17 @@ main .about, main .projects, main .contact {
 
 #gameCanvas {
   display: block;
-  margin: 2rem auto;
-  border: 2px solid white;
-  background: #111;
+  width: 100%;
+  height: 100%;
+}
+
+#gameContainer { /* This is your .project-embed-frame */
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 2px solid white;
+    background: #111;
+    position: relative;
 }
 
 .contact-container {
@@ -274,6 +286,124 @@ main .about, main .projects, main .contact {
   border: none;
 }
 
+.project-list .project-card {
+  background: rgba(255, 255, 255, 0.92); /* Semi-transparent white, similar to .content-container */
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 1.5rem auto;
+  max-width: 900px; /* Adjust as needed */
+  color: #333;
+}
+
+.project-list .project-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-size: 1.6em;
+}
+
+.project-list .project-card p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.project-list .project-card a {
+  color: #2a5298; /* Your theme's link color */
+  font-weight: bold;
+  text-decoration: none;
+  align-self: flex-end;
+}
+
+.project-list .project-card a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure the h2 for the projects page itself is styled (it uses .content-container h2 style currently) */
+/* If .project-list is not inside a .content-container, you might need specific styles for its H2 */
+.project-list > h2 { /* Targeting the h2 that is a direct child of .project-list */
+  text-align: center;
+  color: #fff; /* White, as it's on the main page background */
+  font-size: 2.2em;
+  margin-bottom: 2rem; /* Space before the first card */
+  position: relative;
+}
+
+.project-list > h2::after { /* Underline for the title, similar to other section titles */
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #fff; /* White underline, as title is white */
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.content-container {
+    max-width: 800px; /* Or your preferred general content width */
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    color: #333;
+}
+
+.content-container.content-container-wide {
+    max-width: 1600px;
+}
+
+.content-container h2 { /* Titles for the project page itself */
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1rem; /* Reduced margin if description follows */
+    font-size: 2.2em;
+}
+
+.content-container h2 + p { /* The main description paragraph */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto; /* Center description and add space below */
+    font-size: 1.1em;
+    color: #555;
+}
+
+.project-embed-frame {
+    width: 100%; /* Take full width of its parent (which is .content-container) */
+    border: 2px solid #e0e0e0;
+    margin: 1rem auto 2rem auto; /* Space around the embed frame */
+    background-color: #111; /* Default dark background for embeds */
+    box-sizing: border-box;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: auto;
+    /* Default height - can be overridden */
+    /* min-height: 400px; */ /* A sensible default minimum */
+}
+
+.project-detail-page-wrapper {
+  padding-top: 100px; /* Adjust this value based on your actual fixed header height + desired gap */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 4rem; /* Provides some space before the footer */
+}
+
+/* Optional: A generic button style for links like "Back to Projects" */
+.button-style-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4d79c4; /* Your primary theme color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-style-link:hover {
+  background-color: #1e3c72; /* A darker shade or complementary color */
+  color: #fff;
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 769px) {
   .nav-links {
@@ -297,6 +427,7 @@ main .about, main .projects, main .contact {
     border-radius: 0 0 8px 8px;
     z-index: 1001;
   }
+
   .nav-links li {
     display: block;
     margin-bottom: 0.5rem;

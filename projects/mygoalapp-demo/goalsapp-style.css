@@ -1,0 +1,245 @@
+.project-embed-frame.goals-app-embed-size {
+    height: 900px; /* Specific height for goals app */
+    max-width: 1600px; /* Specific max-width for goals app frame */
+    background-color: #121212; /* Goals app internal background, if different from default frame bg */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.dashboard-container {
+    display: flex;
+    max-width: 100%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 20px;
+}
+
+.goals-column {
+    flex: 1;
+}
+
+.goal-details {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.goal-details p {
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+
+.calendar-column {
+    flex: 1; /* Takes up 1 part of the available space */
+    background-color: #303030;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Placeholder for progress bar styling - we will change this for circular */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    row-gap: 40px;
+    column-gap: 20px;
+}
+
+.goal-card {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.goal-card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #00acc1; 
+    font-size: 1.2em; 
+}
+
+.goal-progress-circle-container {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-ring-track {
+    stroke: #444;
+}
+
+.progress-ring-indicator {
+    stroke: #00acc1;
+    stroke-linecap: round; 
+    transition: stroke-dasharray 0.5s ease-out;
+}
+
+.progress-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.log-form {
+    margin-top: 0;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.log-form input[type="number"] {
+    border: 1px solid #44444441;
+    border-radius: 4px 0 0 4px;
+    background-color: #33333327;
+    color: #ebebeb;
+    flex-grow: 3; /* Takes 3 parts of available space in the flex container */
+    text-align: center;
+    box-sizing: border-box;
+    margin-right: -1px;
+    height: 38px;
+}
+
+.log-form button {
+    padding: 2px 8px;
+    background-color: #00b0c7de;
+    color: white;
+    border: 1px solid #00b0c7de;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+    flex-grow: 1; /* Takes 1 part of available space */
+    box-sizing: border-box;
+    height: 38px; /* Match height of input box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log-form button:hover {
+    background-color: #007c91;
+}
+
+.calendar-column h2 { /* Targeting the H2 inside calendar-column specifically */
+    color: #e0e0e0;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header h3 { /* Month and Year */
+    margin: 0;
+    font-size: 1.4em;
+    color: #00acc1;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    color: #00acc1;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.nav-arrow:hover {
+    color: #007c91;
+}
+
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar-table th {
+    color: #aaa;
+    font-weight: normal;
+    padding-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.calendar-day-cell {
+    text-align: center;
+    padding: 5px;
+    height: 50px;
+    /* vertical-align: middle; /* If content within circle needs centering */
+}
+
+.day-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Makes it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    background-color: #242424;
+    border: 2px solid #333333;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.day-circle.today {
+    border-color: #00acc1;
+    color: #00acc1;
+    box-shadow: 0 0 0 3px #00acc1;
+    font-weight: bold;
+}
+
+/* Color coding based on completion status */
+.day-circle.green {
+    background-color: #4CAF50; /* Green */
+    border-color: #388E3C;
+    color: white;
+}
+
+.day-circle.yellow {
+    background-color: #FFEB3B; /* Yellow */
+    border-color: #FBC02D;
+    color: #333; /* Darker text for yellow bg */
+}
+
+.day-circle.red {
+    background-color: #F44336; /* Red */
+    border-color: #D32F2F;
+    color: white;
+}

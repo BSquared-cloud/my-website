@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="images/favicons/site.webmanifest">
+  <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicons/android-chrome-512x512.png">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyGoalsApp - Demo</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="goalsapp-style.css">  
+</head>
+<body>
+    <header>
+    <nav>
+      <div class="logo">
+        <a href="/index.html"><img src="/images/BB_logo.png" alt="BB Logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#about">About</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+      </ul>
+      <div class="toggle-container">
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+        <div class="project-detail-page-wrapper">
+            <div class="content-container content-container-wide">
+                <h2>MyGoals App Demo</h2>
+                <p>
+                    This interactive demo showcases a personal goals dashboard designed to help users track their progress across various activities. It features dynamically updating progress circles for daily goals and an interactive monthly calendar that highlights goal completion.
+                </p>
+                <div id="myGoalsAppContainer" class="project-embed-frame goals-app-embed-size">
+                    <div class="dashboard-container">
+                        <div class="goals-column">
+                            <div class="goals-grid" id="goals-grid-container">
+                                <!-- Goals will be injected here by JavaScript -->
+                            </div>
+                            <p id="no-goals-message" style="display:none;">No goals defined for this demo.</p>
+                        </div>
+
+                        <div class="calendar-column">
+                            <h2>Calendar</h2>
+                            <div class="calendar-header">
+                                <a href="#" id="prev-month-btn" class="nav-arrow prev-month">&lt;</a>
+                                <h3 id="current-month-year-display">Month Year</h3>
+                                <a href="#" id="next-month-btn" class="nav-arrow next-month">&gt;</a>
+                            </div>
+                            <table class="calendar-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                        <th>Sun</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendar-body-container">
+                                    <!-- Calendar days will be injected here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- End of .project-embed-frame -->
+
+
+                <h3>Key Features & Learnings:</h3>
+                <ul>
+                    <li>Dynamic goal and progress tracking.</li>
+                    <li>Interactive monthly calendar with navigation.</li>
+                    <li>DOM manipulation for updating UI elements in real-time.</li>
+                    <li>Modular JavaScript for handling goals and calendar logic.</li>
+                    <li>Responsive design considerations</li>
+                </ul>
+
+                <p style="text-align: center; margin-top: 2rem;">
+                    <a href="/projects.html" class="button-style-link">← Back to All Projects</a>
+                </p>
+            </div> <!-- End of .content-container -->
+        </div> <!-- End of .project-detail-page-wrapper -->
+    </main> 
+    <script src="goalsapp.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -8,10 +8,10 @@
   <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="images/favicons/android-chrome-512x512.png">
-
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brandon Bowers | Projects</title>
+  <title>Brandon Bowers | Paddle Game</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -33,29 +33,34 @@
   </header>
 
   <main>
-    <section class="project-list">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>This Website</h3>
-        <p>My personal website, built with HTML, CSS, and JavaScript.</p>
-        <a href="/index.html">View on homepage →</a>
-      </div>
-      <div class="project-card">
-        <h3>Paddle Ball Game</h3>
-        <p>A simple canvas-based paddle game written in JavaScript.</p>
-        <a href="/projects/paddle-game/paddle.html">Play Game →</a>
-      </div>
-      <div class="project-card">
-        <h3>Personal Goals App</h3>
-        <p>A personal goals app. (Doesn't render well on mobile or smaller screens, yet)</p>
-        <a href="/projects/mygoalapp-demo/goalsapp-demo.html">Try Demo →</a>
-      </div>
-    </section>
+    <div class="project-detail-page-wrapper">
+      <div class="content-container">
+        <h2>Paddle Ball Game</h2>
+          <p>A simple implementation of the classic Paddle Ball game, built 100% by AI, using HTML5 Canvas and vanilla JavaScript. You can control the paddle with your arrow keys.
+          </p>
+        <div id="gameContainer" class="project-embed-frame">
+            <canvas id="gameCanvas"width="600" height="400"></canvas>
+        </div>
+      <h3>Key Features & Learnings:</h3>
+        <ul>
+          <li>Dynamic ball movement and physics.</li>
+          <li>Paddle control via mouse input.</li>
+          <li>Collision detection between ball, paddle, and walls.</li>
+          <li>Score tracking (coming soon!).</li>
+        </ul>
+
+        <p style="text-align: center; margin-top: 2rem;">
+          <a href="/projects.html" class="button-style-link">← Back to All Projects</a>
+        </p>
+        </div>
+     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Brandon Bowers. All rights reserved.</p>
   </footer>
+  <!-- Scripts -->
   <script src="/script.js"></script>
+  <script src="paddle.js"></script>
 </body>
 </html>
