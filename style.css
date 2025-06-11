@@ -207,14 +207,6 @@ main .about, main .projects, main .contact {
   max-width: 1000px;
 }
 
-.projects .view.projects a {
-  color: #ffffff;
-  font-style: italic;
-  margin: 0 auto 1rem;
-  max-width: 1000px;
-  padding-left: 2px;
-}
-
 #gameCanvas {
   display: block;
   width: 100%;
