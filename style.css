@@ -35,6 +35,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
+  margin-top: auto;
 }
 
 /* NAV Container */
@@ -390,6 +391,140 @@ main .about, main .projects, main .contact {
 .button-style-link:hover {
   background-color: #1e3c72;
   color: #fff;
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Space between posts */
+}
+
+/* feed.html */
+/* The main card for a single post */
+.post-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* Header section of the post */
+.post-header {
+  position: static;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+/* new div just for the title and date */
+.post-title-info {
+  /* Flexbox is not needed here as they are block-level elements */
+}
+
+.post-title, .post-date {
+  position: static; /* OVERRIDE any potential positioning */
+  margin: 0;
+  transform: none;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+}
+
+/* main title of the post */
+.post-title {
+  font-size: 1.5em;
+  color: #2c3e50; /* Your theme's dark blue */
+  margin-bottom: 0.25rem;
+}
+
+/* date of the post */
+.post-date {
+  font-size: 0.8em;
+  color: #6a737d;
+}
+
+/* body content of the post */
+.post-body p {
+  margin-bottom: 1em;
+  line-height: 1.7;
+  color: #333;
+}
+/* This removes the extra bottom margin from the last paragraph in the body */
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* The container for the image or video */
+.post-media {
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures images with border-radius look good */
+}
+
+/* Styling for the media itself */
+.post-media img,
+.post-media video,
+.post-media iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styles for a flexible, multi-column image/video gallery */
+.media-gallery {
+  display: grid;
+  /* create as many columns as can fit that are at least 200px wide */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  /* The space between items */
+}
+
+/* This targets direct children of the gallery, making sure they fill their grid cell */
+.media-gallery>* {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* This makes images fill the cell without distortion */
+}
+
+/* Special rule for iframes to maintain their aspect ratio */
+.media-gallery iframe {
+  aspect-ratio: 16 / 9;
+}
+
+/* Styles for a custom link preview card within a post */
+.post-link-preview {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  /* A very light gray background */
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.post-link-preview:hover {
+  background-color: #f1f1f1;
+  /* Slightly darker on hover */
+}
+
+.link-preview-title {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 0.25rem;
+}
+
+.link-preview-url {
+  display: block;
+  color: #6a737d;
+  /* A muted gray for the URL */
+  font-size: 0.9em;
 }
 
 /* MEDIA QUERIES */
