@@ -243,3 +243,41 @@ h1 {
     border-color: #D32F2F;
     color: white;
 }
+
+.mobile-orientation-message {
+    display: none; /* IMPORTANT: Hide it by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    text-align: center;
+    height: 100%; /* Make it fill the parent embed frame */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* style the icon */
+.mobile-orientation-message .fa-mobile-screen-button {
+    font-size: 4em; /* Make the icon large */
+    margin-bottom: 1.5rem;
+    color: #00acc1; /* Use your app's theme color */
+}
+
+/* style the message text */
+.mobile-orientation-message p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* show the message ONLY on narrow, portrait screens */
+@media (max-width: 768px) and (orientation: portrait) {
+    /* Hide the actual app dashboard */
+    .dashboard-container {
+        display: none;
+    }
+    /* Show our orientation message */
+    .mobile-orientation-message {
+        display: flex; /* This makes the message visible */
+    }
+}
