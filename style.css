@@ -418,11 +418,6 @@ main .about, main .projects, main .contact {
   border-bottom: 1px solid #e1e4e8;
 }
 
-/* new div just for the title and date */
-.post-title-info {
-  /* Flexbox is not needed here as they are block-level elements */
-}
-
 .post-title, .post-date {
   position: static; /* OVERRIDE any potential positioning */
   margin: 0;
