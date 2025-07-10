@@ -543,8 +543,11 @@ main .about, main .projects, main .contact {
     position: absolute;
     top: 100%;
     right: 0;
-    background: #2c3e5000;
-    padding: 1rem 1.5rem;
+    background: rgba(44, 62, 80, 0.85); /* This is the same color (#2c3e50) but with 85% opacity */
+    /* creates the blur effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    padding: 1rem 1rem;
     text-align: right;
     border-radius: 0 0 8px 8px;
     z-index: 1001;
@@ -560,6 +563,36 @@ main .about, main .projects, main .contact {
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+  }
+
+  .page-header {
+    background: #fff; /* Give it a white background like a card */
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem; /* Space between this card and the first post */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .feed-section .content-container {
+    /* This makes the white box container disappear on mobile */
+    background: none;
+    box-shadow: none;
+    padding: 0 0;
+  }
+
+  .post-card {
+    /* Reduce the internal padding on mobile to maximize text width */
+    padding: 1rem 1rem;
+  }
+
+  /* CHANGED: Make the post titles a bit smaller on mobile */
+  .post-title {
+    font-size: 1.4em;
+  }
+
+  /* CHANGED: Slightly tighten up the line height for body text on mobile */
+  .post-body p {
+    line-height: 1.5;
   }
 }
 
