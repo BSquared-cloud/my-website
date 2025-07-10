@@ -419,7 +419,7 @@ main .about, main .projects, main .contact {
 }
 
 .post-title, .post-date {
-  position: static; /* OVERRIDE any potential positioning */
+  position: static;
   margin: 0;
   transform: none;
   left: auto;
@@ -431,7 +431,7 @@ main .about, main .projects, main .contact {
 /* main title of the post */
 .post-title {
   font-size: 1.5em;
-  color: #2c3e50; /* Your theme's dark blue */
+  color: #2c3e50;
   margin-bottom: 0.25rem;
 }
 
@@ -447,9 +447,14 @@ main .about, main .projects, main .contact {
   line-height: 1.7;
   color: #333;
 }
-/* This removes the extra bottom margin from the last paragraph in the body */
+/* removes the extra bottom margin from the last paragraph in the body */
 .post-body p:last-child {
   margin-bottom: 0;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 25px; /* Adjust left indentation */
 }
 
 /* The container for the image or video */
@@ -482,7 +487,6 @@ main .about, main .projects, main .contact {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* This makes images fill the cell without distortion */
 }
 
 /* Special rule for iframes to maintain their aspect ratio */
